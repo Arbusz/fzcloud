@@ -1,0 +1,21 @@
+    syntax = "proto3";
+
+    message FzRequest
+    {
+
+        uint32 jobID = 1;
+        string cmd = 2;
+    }
+
+    message FzResponse
+    {
+        uint32 jobID = 1;
+        bool flag = 2;
+        string ret = 3;
+        string cmd = 4;
+    }
+
+    service FzService
+    {
+        rpc RemoteCall (FzRequest) returns (FzResponse);
+    }
